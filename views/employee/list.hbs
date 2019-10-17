@@ -1,0 +1,26 @@
+<h3><a class="btn btn-secondary" href="/employee"><i class="fa fa-plus"></i> Buat Baru</a><center>ASIPA INDONESIA</center></h3><br>
+ <table>
+    <thead>
+        <tr>
+            <th width="160">Full Name</th>
+            <th width="220">Email</th>
+            <th width="120">Mobile</th>
+            <th width="100">City</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        {{#each list}}
+        <tr>
+            <td>{{this.fullname}}</td>
+            <td>{{this.email}}</td>
+            <td>{{this.mobile}}</td>
+            <td>{{this.city}}</td>
+            <td>
+                <a href="/employee/{{this._id}}"><i class="fa fa-pencil fa-lg" aria-hidden="true"></i></a>
+                <a href="/employee/delete/{{this._id}}" onclick="return confirm('Apakah kamu akan menghapus data ini ?');"><i class="fa fa-trash fa-lg" aria-hidden="true"></i></a>
+            </td>
+        </tr>
+        {{/each}}
+    </tbody>
+</table>
